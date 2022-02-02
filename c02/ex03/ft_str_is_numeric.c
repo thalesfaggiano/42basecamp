@@ -6,7 +6,7 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 10:43:16 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/02 11:04:44 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:22:12 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ int ft_str_is_numeric(char *str)
 
 	i = -1;
 	while (str[++i])
-	{
 		if (!(str[i] > 0x2f && str[i] < 0x3a))
 			return (0);
-	}
 	return (1);
 }

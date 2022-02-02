@@ -6,7 +6,7 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 07:34:23 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/02 08:39:58 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:22:46 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_str_is_alpha(char *str)
@@ -15,10 +15,8 @@ int	ft_str_is_alpha(char *str)
 
 	i = -1;
 	while (str[++i])
-	{
 		if (!((str[i] > 0x40 && str[i] < 0x5b)
 				|| (str[i] > 0x60 && str[i] < 0x7b)))
 			return (0);
-	}
 	return (1);
 }
