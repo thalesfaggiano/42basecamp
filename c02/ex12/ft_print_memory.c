@@ -6,13 +6,15 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:48:09 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/03 14:19:43 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/03 14:27:23 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
 void	col_addr(size_t addr);
 void	col_str(char *str);
+
+char	dig[16] = "0123456789abcdef";
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
@@ -33,11 +35,9 @@ void	*ft_print_memory(void *addr, unsigned int size)
 
 void	col_addr(size_t addr)
 {
-	char	*dig;
 	char	hex[16];
 	int	i;
 	
-	dig = "0123456789abcdef";
 	i = 16;
 	while (--i > -1)
 	{
@@ -50,10 +50,8 @@ void	col_addr(size_t addr)
 
 void	col_str(char *str)
 {
-	char	*dig;
 	int	i;
 
-	dig = "0123456789abcdef";
 	i = -1;
 	while (++i < 16)
 	{
