@@ -6,7 +6,7 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:35:43 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/03 10:44:41 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/03 11:51:34 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 
 	var = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	size = 0x31;
-	printf("%p\n",ft_print_memory(&var, size));
+	printf("%p - %d - %s\n",var, size, var);
+	printf("%p\n",ft_print_memory(var, size));
 	return (0);
 }

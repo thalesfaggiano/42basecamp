@@ -6,7 +6,7 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:48:09 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/03 11:01:09 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/03 11:17:00 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -37,14 +37,15 @@ void	col_addr(size_t addr)
 	int	i;
 	
 	dig = "0123456789abcdef";
-	i = 16;
-	while (i-- > 0)
+	i = 18;
+	while (--i > 0)
 	{
 		hex[i] = dig[addr % 0x10];
 		addr /= 0x10;
 	}
 	write(1, hex, 16);
 }
+
 
 void	col_str(char *str)
 {
