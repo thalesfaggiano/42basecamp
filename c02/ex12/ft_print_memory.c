@@ -6,7 +6,7 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:48:09 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/03 19:23:43 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/03 19:37:02 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -63,21 +63,16 @@ void	col_str(char *str, int k)
 	{
 		write(1, &g_dig[(str[i] & 0xf0) >> 4], 1);
 		write(1, &g_dig[(str[i] & 0x0f)], 1);
-		if (i % 2)
-			write(1, "\x20", 1);
+		write(1, "\x20", i % 2 ? 1 : 0);
 	}
 	while (++i < 17)
-	{
-		write(1, "\x20\x20", 2);
-		if (i % 2)
-			write(1, "\x20", 1);
-	}
+		write(1, "\x20\x20\x20", 2 + (i % 2 ? 1 : 0));
 	i = -1;
 	while (++i < k)
 	{
 		if (str[i] > 0x1f && str[i] < 0x7f)
 			write(1, &str[i], 1);
 		else
-			write(1, "\x2e", 2);
+			write(1, "\x2e", 1);
 	}
 }
