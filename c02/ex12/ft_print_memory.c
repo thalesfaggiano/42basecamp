@@ -6,18 +6,26 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:48:09 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/03 08:25:29 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/03 08:53:33 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
 void	mem_addr(size_t addr)
 {
-	char	*hex;
+	char	*dig;
+	char	hex[16];
+	int	i;
 	
-	hex = "0123456789abcdef:";
-	addr += 0x01;
-	write(1, &hex[16], 1);
+	dig = "0123456789abcdef:";
+	i = 16;
+	while (addr)
+	{
+		hex[--i] = dig[addr % 0x10];
+		addr /= 0x10;
+	}
+	write(1, hex, 16);
+	write(1, &dig[16], 1);
 }
 
 void	*ft_print_memory(void *addr, unsigned int size)
