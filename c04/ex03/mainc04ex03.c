@@ -6,7 +6,7 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 09:07:01 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/09 15:48:45 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:00:54 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -16,7 +16,7 @@ int	ft_atoi(char *str);
 int	main(void)
 {
 	//char	str[20] = " ---+--+1234ab567";
-	char	str[20] = " +-+ 00123456789";
+	char	str[20] = "\n\r\t\f\v +-+00123456789";
 	int	a;
 
 
