@@ -6,37 +6,38 @@
 /*   By: tfaggian <tfaggian@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 08:21:16 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/02/11 10:16:06 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/11 10:44:28 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
 void	ft_nbr(int nbr, char *base, int size);
-int	*ft_validation(char *base);
-int	g_size;
+int	ft_validation(char *base);
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	if (*ft_validation(base))
-		ft_nbr(nbr, base, *ft_validation(base));
+	int	size;
+	size = ft_validation(base);
+	if (size)
+	{
+		if (nbr < 0)
+		{
+			write(1, "\x2d", 1);
+			ft_nbr(-nbr, base, size);
+		}
+		else
+			ft_nbr(nbr, base, size);
+	}
 }
 
 void	ft_nbr(int nbr, char *base, int size)
 {
-	char	number[100];
-	int	i;
-	
-	i = -1;
-	while (nbr)
-	{
-		number[++i] = base[nbr % size];
-		nbr /= size;
-	}
-	while (i + 1)
-		write(1, &number[i--] ,1);
+	if (nbr >= size)
+		ft_nbr(nbr / size, base, size);
+	write(1, &base[nbr % size] ,1);
 }
 
-int	*ft_validation(char *base)
+int	ft_validation(char *base)
 {
 	int	i;
 	int	k;
@@ -54,6 +55,5 @@ int	*ft_validation(char *base)
 	}
 	if (i < 2)
 		return (0);
-	g_size = i;
-	return (&g_size);
+	return (i);
 }
