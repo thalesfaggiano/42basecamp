@@ -6,7 +6,7 @@
 /*   By: tfaggian <tfaggian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 14:12:14 by tfaggian          #+#    #+#             */
-/*   Updated: 2022/01/30 14:19:21 by tfaggian         ###   ########.fr       */
+/*   Updated: 2022/02/12 18:27:39 by tfaggian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void	ft_print_alphabet(void)
 
 	i = 0x60;
 	while (i++ < 0x7a)
-	{
 		ft_putchar(i);
-	}
 }
 
 void	ft_putchar(char c)
